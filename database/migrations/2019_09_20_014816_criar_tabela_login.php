@@ -17,7 +17,7 @@ class CriarTabelaLogin extends Migration
             $table->increments('log_id');
             $table->string('log_login')->unique();
             $table->string('log_nome');
-            $table->string('log_senha');
+            $table->string('log_senha'); 
             $table->boolean('log_ativo')->default(true);
         });
     }
