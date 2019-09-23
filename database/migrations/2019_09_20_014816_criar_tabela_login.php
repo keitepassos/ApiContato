@@ -15,10 +15,10 @@ class CriarTabelaLogin extends Migration
     {
         Schema::create('login', function (Blueprint $table) {
             $table->increments('log_id');
-            $table->string('log_login')->unique();
+            $table->string('log_login')->unique(); 
             $table->string('log_nome');
             $table->string('log_senha'); 
-            $table->boolean('log_ativo')->default(true);
+            $table->boolean('log_ativo')->default(true); 
         });
     }
 

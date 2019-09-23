@@ -20,7 +20,7 @@ class CriarTabelaContatos extends Migration
             $table->string('con_email');
             $table->string('con_instituicao');
             $table->binary('con_foto');
-            $table->date('con_data_nascimento');
+            $table->date('con_data_nascimento'); 
         });
     }
 
