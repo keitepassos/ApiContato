@@ -10,7 +10,12 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
+/** @var Laravel\Lumen\Routing\Router $router */
 $router->get('/', function () use ($router) {
     return $router->app->version();
+});
+
+$router->group(['prefix'=>"api"],function()use ($router) {
+    $router->get('listContatos','ContatosController@index');
+    $router->post('cadastraContatos','ContatosController@cadastrar');
 });
