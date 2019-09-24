@@ -14,9 +14,17 @@ class ContatosController extends Controller
     }
 
     public function cadastrar(Request $request){
-        return ['rodolpho','jailson'];
+       // var_dump($request->nome);
+        //exit;
+        
         //return response()
             //  ->json(Contatos::create(['con_nome'=>$request->nome]), status:201);
+
+            return response()
+            ->json(
+                Contatos::create($request->all()),
+                201
+            );
     }
 
     //
