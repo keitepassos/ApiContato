@@ -12,5 +12,5 @@ class Contatos extends Model
     public function contatos()
     {
         return $this->hasMany(Contatos::class);
-    }
+    } 
 }

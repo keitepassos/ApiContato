@@ -16,7 +16,7 @@ class CriarTabelaContatos extends Migration
        // Schema::dropIfExists('contatos');
         Schema::create('contatos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('con_nome');
+            $table->string('con_nome'); 
             $table->string('con_sobrenome');
             $table->string('con_email');
             $table->string('con_instituicao')->nullable();

@@ -11,7 +11,7 @@ class ContatosController extends Controller
     public function index()
     {
          $result = Contatos::all();
-        
+           
          return response()->json($result);
     }
 
