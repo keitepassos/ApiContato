@@ -13,13 +13,14 @@ class CriarTabelaContatos extends Migration
      */
     public function up()
     {
+       // Schema::dropIfExists('contatos');
         Schema::create('contatos', function (Blueprint $table) {
-            $table->increments('con_id');
+            $table->increments('id');
             $table->string('con_nome');
             $table->string('con_sobrenome');
             $table->string('con_email');
-            $table->string('con_instituicao');
-            $table->binary('con_foto');
+            $table->string('con_instituicao')->nullable();
+            $table->binary('con_foto')->nullable();
             $table->date('con_data_nascimento'); 
         });
     }

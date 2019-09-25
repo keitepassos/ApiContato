@@ -16,6 +16,9 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix'=>"api"],function()use ($router) {
-    $router->get('listContatos','ContatosController@index');
-    $router->post('cadastraContatos','ContatosController@cadastrar');
+    $router->get('contatos','ContatosController@index');
+    $router->get('contatos/{id}','ContatosController@show');
+    $router->post('contatos','ContatosController@store');
+    $router->put('contatos/{id}','ContatosController@update');
+    $router->delete('contatos/{id}','ContatosController@destroy');
 });
