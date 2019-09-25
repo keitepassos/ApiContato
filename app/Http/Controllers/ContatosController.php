@@ -10,7 +10,9 @@ class ContatosController extends Controller
    
     public function index()
     {
-        return Contatos::all();
+         $result = Contatos::all();
+        
+         return response()->json($result);
     }
 
     public function store(Request $request){
