@@ -56,7 +56,7 @@ class ContatosController extends Controller
             ], 404);
         }
 
-        return response()->json('', 204);
+        return response()->json('Sucesso', 204);
     }
 
     //
