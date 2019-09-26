@@ -17,12 +17,12 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix'=>"api"],function()use ($router) {
 
-    $router->group(['prefix'=>"contatos"],function()use ($router) {
+    $router->group(['prefix'=>"contatos","middleware"=>'auth'],function()use ($router) {
         $router->get('','ContatosController@index');
         $router->get('{id}','ContatosController@show');
         $router->post('','ContatosController@store');
         $router->put('{id}','ContatosController@update');
         $router->delete('{id}','ContatosController@destroy');
     });
-
 });
+$router->post('/api/login','TokenController@geraToken');
