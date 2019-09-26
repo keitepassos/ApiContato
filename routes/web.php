@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix'=>"api"],function()use ($router) {
 
-    $router->group(['prefix'=>"contatos","middleware"=>'auth'],function()use ($router) {
+    $router->group(['prefix'=>"contatos","middleware"=>'autenticador'],function()use ($router) {
         $router->get('','ContatosController@index');
         $router->get('{id}','ContatosController@show');
         $router->post('','ContatosController@store');
