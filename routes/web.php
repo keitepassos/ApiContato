@@ -25,11 +25,4 @@ $router->group(['prefix'=>"api"],function()use ($router) {
         $router->delete('{id}','ContatosController@destroy');
     });
 
-    $router->group(['prefix'=>"login"],function()use ($router) {
-        $router->get('','LoginController@index');
-        $router->get('{id}','LoginController@show');
-        $router->post('','LoginController@store'); 
-        $router->put('{id}','LoginController@update');
-        $router->delete('{id}','LoginController@destroy');
-    });
 });
