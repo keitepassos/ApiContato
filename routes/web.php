@@ -16,9 +16,20 @@ $router->get('/', function () use ($router) {
 }); 
 
 $router->group(['prefix'=>"api"],function()use ($router) {
-    $router->get('contatos','ContatosController@index');
-    $router->get('contatos/{id}','ContatosController@show');
-    $router->post('contatos','ContatosController@store');
-    $router->put('contatos/{id}','ContatosController@update');
-    $router->delete('contatos/{id}','ContatosController@destroy');
+
+    $router->group(['prefix'=>"contatos"],function()use ($router) {
+        $router->get('','ContatosController@index');
+        $router->get('{id}','ContatosController@show');
+        $router->post('','ContatosController@store');
+        $router->put('{id}','ContatosController@update');
+        $router->delete('{id}','ContatosController@destroy');
+    });
+
+    $router->group(['prefix'=>"login"],function()use ($router) {
+        $router->get('','LoginController@index');
+        $router->get('{id}','LoginController@show');
+        $router->post('','LoginController@store'); 
+        $router->put('{id}','LoginController@update');
+        $router->delete('{id}','LoginController@destroy');
+    });
 });

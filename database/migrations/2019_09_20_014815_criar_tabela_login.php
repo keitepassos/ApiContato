@@ -12,11 +12,12 @@ class CriarTabelaLogin extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
+       // Schema::dropIfExists('login');
         Schema::create('login', function (Blueprint $table) {
-            $table->increments('log_id');
+            $table->increments('id');
             $table->string('log_login')->unique(); 
-            $table->string('log_nome');
+            $table->string('log_nome')->nullable();
             $table->string('log_senha'); 
             $table->boolean('log_ativo')->default(true); 
         });
